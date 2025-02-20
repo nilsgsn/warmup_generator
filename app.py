@@ -78,6 +78,6 @@ st.markdown("<p style='text-align: center; font-size: smaller;'>created by Mr Ü
 
 # Schul-Logo hinzufügen
 st.markdown(
-    "<img src='school_logo.png' style='max-width: 100px; width: auto; height: auto;'>",
+    "<img src='school_logo.png' style='width: 100px; height: auto;'>",
     unsafe_allow_html=True
 )
