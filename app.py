@@ -29,6 +29,7 @@ warm_ups = [
     {"name": "Stand Up If…", "category": "Communication", "grades": [5, 6, 7, 8], "instructions": "Students stand up when a statement applies to them."},
     {"name": "Ball Toss Q&A", "category": "Communication", "grades": [5, 6, 7, 8, 9, 10], "instructions": "Students toss a ball to each other and ask questions when they catch it."},
     {"name": "Jump the Line (True or False)", "category": "Movement", "grades": [6, 7, 8, 9, 10], "instructions": "Students jump over a line if they think a statement is true or false."},
+
     # Neue Warm-Ups
     {"name": "Hangman", "category": "Thinking & Puzzles", "grades": [5, 6, 7], "instructions": "One student thinks of a word, and others guess letters to figure it out before the hangman is complete."},
     {"name": "Word Chains", "category": "Vocabulary", "grades": [6, 7, 8, 9, 10], "instructions": "Students create chains of words where each new word starts with the last letter of the previous word."},
@@ -50,26 +51,17 @@ warm_ups = [
 st.set_page_config(page_title="Warm-Up Generator", layout="centered")
 st.title("Warm-Up Generator")
 
-# Schul-Logo hinzufügen
-logo = st.image("school_logo.png", width=100, use_container_width=True)
-
-# Layout für Logo und Titel
-col1, col2 = st.columns([1, 4])
-with col1:
-    st.image("school_logo.png", width=100, use_container_width=True)
-with col2:
-    st.title("Warm-Up Generator")
-
 # Auswahlfelder
-selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10])
-selected_category = st.selectbox("Select Category:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"])
+selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10], index=0)
+selected_category = st.selectbox("Select Category:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"], index=0)
 
 # Spielauswahl per Knopfdruck
 def get_random_warm_up():
     filtered_warm_ups = [w for w in warm_ups if selected_grade in w["grades"] and (selected_category == "All" or w["category"] == selected_category)]
     return random.choice(filtered_warm_ups) if filtered_warm_ups else None
 
-if st.button("Generate Warm-Up"):
+# Zentrierter Button
+if st.button("Generate Warm-Up", key="generate_button"):
     warm_up = get_random_warm_up()
     if warm_up:
         st.markdown(f"<h3 style='text-align: center;'>{warm_up['name']}</h3>", unsafe_allow_html=True)
@@ -81,3 +73,6 @@ if st.button("Generate Warm-Up"):
 # Hinweis ganz unten
 st.markdown("<br><br><br>", unsafe_allow_html=True)  # Fügt Platz ein
 st.markdown("<p style='text-align: center; font-size: smaller;'>created by Mr Übach in collaboration with ChatGPT</p>", unsafe_allow_html=True)
+
+# Schul-Logo hinzufügen
+st.image("school_logo.png", width=100, use_container_width=True)
