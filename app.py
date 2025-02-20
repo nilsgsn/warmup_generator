@@ -51,9 +51,11 @@ warm_ups = [
 st.set_page_config(page_title="Warm-Up Generator", layout="centered")
 st.title("Warm-Up Generator")
 
-# Auswahlfelder
+# Zentrierte Auswahlfelder
+st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
 selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10], index=0)
 selected_category = st.selectbox("Select Category:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"], index=0)
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Spielauswahl per Knopfdruck
 def get_random_warm_up():
