@@ -22,6 +22,22 @@ warm_ups = [
     {"name": "Secret Word", "category": "Vocabulary", "grades": [6, 7, 8, 9], "instructions": "A student describes a secret word without saying it, and others guess."},
     {"name": "Word Ladders", "category": "Vocabulary", "grades": [7, 8, 9, 10], "instructions": "Students change one letter at a time to transform a word into another."},
     {"name": "Sentence Building Relay", "category": "Grammar", "grades": [6, 7, 8], "instructions": "Each student adds a word to build a correct sentence in a relay race format."},
+
+    # Neue Warm-Ups
+    {"name": "Hangman", "category": "Thinking & Puzzles", "grades": [5, 6, 7], "instructions": "One student thinks of a word, and others guess letters to figure it out before the hangman is complete."},
+    {"name": "Word Chains", "category": "Vocabulary", "grades": [6, 7, 8, 9, 10], "instructions": "Students create chains of words where each new word starts with the last letter of the previous word."},
+    {"name": "Alphabet Race", "category": "Movement", "grades": [5, 6, 7], "instructions": "Students search the classroom for items that start with the letters of the alphabet."},
+    {"name": "Speed Vocab Challenge", "category": "Vocabulary", "grades": [6, 7, 8, 9, 10], "instructions": "Students must quickly name words in specific categories."},
+    {"name": "Past Tense Bingo", "category": "Grammar", "grades": [6, 7, 8], "instructions": "Students receive bingo cards with verbs in infinitive form and must form the past tense when the verb is called."},
+    {"name": "Find the Mistake", "category": "Grammar", "grades": [7, 8, 9, 10], "instructions": "Students read sentences and identify grammatical errors."},
+    {"name": "Verb Conjugation Race", "category": "Grammar", "grades": [5, 6, 7], "instructions": "Students conjugate verbs as quickly as possible in different tenses."},
+    {"name": "Who Am I? (Question Formation)", "category": "Communication", "grades": [6, 7, 8, 9], "instructions": "One student thinks of a person, and others ask yes/no questions to find out who it is."},
+    {"name": "Preposition Simon Says", "category": "Movement", "grades": [5, 6, 7], "instructions": "Like 'Simon Says', but with instructions that include prepositions that students must use."},
+    {"name": "Irregular Verb Snap", "category": "Grammar", "grades": [6, 7, 8], "instructions": "Students lay down cards with irregular verbs and shout 'Snap' when two of the same verbs are revealed."},
+    {"name": "Describe and Draw", "category": "Communication", "grades": [5, 6, 7, 8, 9, 10], "instructions": "One student describes a picture while another draws it."},
+    {"name": "Roleplay Scenarios", "category": "Communication", "grades": [7, 8, 9, 10], "instructions": "Students act out different scenarios to practice conversation."},
+    {"name": "The Whisper Challenge", "category": "Communication", "grades": [5, 6, 7, 8], "instructions": "A whispered sentence is passed down a line of students; the last one says it out loud."},
+    {"name": "What’s Missing? (Memory Game)", "category": "Thinking & Puzzles", "grades": [5, 6, 7], "instructions": "Students memorize items on a tray that is shown briefly, then covered. They must say what is missing."},
 ]
 
 # Streamlit UI
@@ -29,7 +45,14 @@ st.set_page_config(page_title="Warm-Up Generator", layout="centered")
 st.title("Warm-Up Generator")
 
 # Schul-Logo hinzufügen
-st.image("school_logo.png", width=100, use_container_width='auto', caption='School Logo', output_format='auto')
+logo = st.image("school_logo.png", width=100, use_container_width=True)
+
+# Layout für Logo und Titel
+col1, col2 = st.columns([1, 4])
+with col1:
+    st.image("school_logo.png", width=100, use_container_width=True)
+with col2:
+    st.title("Warm-Up Generator")
 
 # Auswahlfelder
 selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10])
