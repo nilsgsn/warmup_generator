@@ -3,55 +3,49 @@ import random
 
 # Datenbank mit Warm-Ups
 warm_ups = [
-    # Grammatikspiele
-    {"name": "Past Tense Challenge", "category": "Grammatik", "grades": [6, 7, 8], "description": "Students take turns forming sentences in past tense. Incorrect sentences are corrected as a group."},
-    {"name": "Sentence Builder", "category": "Grammatik", "grades": [5, 6, 7], "description": "One student starts with a word, and each student adds a word to build a grammatically correct sentence."},
-    {"name": "Verb Conjugation Race", "category": "Grammatik", "grades": [6, 7, 8, 9], "description": "Students compete in teams to conjugate verbs correctly as quickly as possible."},
-    {"name": "Find the Mistake", "category": "Grammatik", "grades": [7, 8, 9, 10], "description": "Students correct mistakes in sentences written on the board."},
-    {"name": "Conditionals Challenge", "category": "Grammatik", "grades": [8, 9, 10], "description": "Students form sentences using first, second, and third conditionals based on given prompts."},
-    
-    # Vokabelspiele
-    {"name": "Pictionary", "category": "Vokabeln", "grades": [5, 6, 7, 8], "description": "Students draw vocabulary words while others guess what they are."},
-    {"name": "Hot Seat", "category": "Vokabeln", "grades": [6, 7, 8, 9], "description": "One student sits in the 'hot seat' and tries to guess a word their classmates describe."},
-    {"name": "Word Association", "category": "Vokabeln", "grades": [5, 6, 7, 8, 9], "description": "Students say words related to a given topic. Repetitions or pauses mean elimination."},
-    {"name": "Word Snake", "category": "Vokabeln", "grades": [5, 6, 7, 8], "description": "Each student must say a word that begins with the last letter of the previous word."},
-    {"name": "Synonym and Antonym Challenge", "category": "Vokabeln", "grades": [7, 8, 9, 10], "description": "Students provide synonyms or antonyms for given words."},
-    
-    # Kommunikationsspiele
-    {"name": "Speed Dating Conversations", "category": "Kommunikation", "grades": [8, 9, 10], "description": "Students pair up for quick conversations on different topics before switching partners."},
-    {"name": "Story Chain", "category": "Kommunikation", "grades": [5, 6, 7, 8], "description": "Each student adds a sentence to a growing story, building on what was said before."},
-    {"name": "Interview a Partner", "category": "Kommunikation", "grades": [7, 8, 9, 10], "description": "Students ask each other pre-made or spontaneous interview questions."},
-    {"name": "Describe and Draw", "category": "Kommunikation", "grades": [5, 6, 7], "description": "One student describes a picture while another student draws it without seeing the original."},
-    {"name": "Role Play Scenarios", "category": "Kommunikation", "grades": [7, 8, 9, 10], "description": "Students act out real-life situations, such as ordering food or asking for directions."},
-    
-    # Bewegungsspiele
-    {"name": "Simon Says", "category": "Bewegung", "grades": [5, 6], "description": "Students must follow commands that start with 'Simon says' but ignore other commands."},
-    {"name": "Running Dictation", "category": "Bewegung", "grades": [7, 8, 9], "description": "Students take turns running to a text, memorizing a line, and dictating it to their partner."},
-    {"name": "Act it Out", "category": "Bewegung", "grades": [5, 6, 7, 8], "description": "Students act out vocabulary words or phrases while others guess the meaning."},
-    {"name": "Four Corners", "category": "Bewegung", "grades": [6, 7, 8], "description": "Each corner of the room represents an answer to a question, and students move to the correct one."},
-    {"name": "Vocabulary Relay Race", "category": "Bewegung", "grades": [6, 7, 8, 9], "description": "Students run to the board to write vocabulary words related to a given topic."},
-    
-    # Denk- und Rätselspiele
-    {"name": "20 Questions", "category": "Denken & Rätsel", "grades": [6, 7, 8, 9], "description": "Students ask yes/no questions to guess a mystery word or person."},
-    {"name": "Riddle Time", "category": "Denken & Rätsel", "grades": [5, 6, 7, 8], "description": "Students solve English riddles and explain their reasoning."},
-    {"name": "Word Jumble", "category": "Denken & Rätsel", "grades": [6, 7, 8, 9, 10], "description": "Students unscramble letters to form correct words."},
-    {"name": "Logic Puzzle", "category": "Denken & Rätsel", "grades": [7, 8, 9, 10], "description": "Students solve short logic puzzles in groups."},
-    {"name": "Find the Liar", "category": "Denken & Rätsel", "grades": [8, 9, 10], "description": "Each student tells two truths and one lie. The class guesses which statement is false."}
+    {"name": "Simon Says", "category": "Movement", "grades": [5, 6], "instructions": "The teacher gives commands, but students should only follow them if they start with 'Simon says'."},
+    {"name": "20 Questions", "category": "Thinking & Puzzles", "grades": [7, 8, 9, 10], "instructions": "One student thinks of an object, and others can ask up to 20 yes/no questions to guess it."},
+    {"name": "Word Association", "category": "Vocabulary", "grades": [6, 7, 8, 9], "instructions": "Students take turns saying words that are connected to the previous word."},
+    {"name": "Two Truths and a Lie", "category": "Communication", "grades": [7, 8, 9, 10], "instructions": "Each student says two true statements and one false one; classmates guess the lie."},
+    {"name": "Find Someone Who...", "category": "Communication", "grades": [5, 6, 7], "instructions": "Students walk around and find classmates who fit given descriptions (e.g., 'has a pet')."},
+    {"name": "Running Dictation", "category": "Movement", "grades": [6, 7, 8, 9], "instructions": "A text is posted on the wall. One student runs, reads, and dictates it to a partner."},
+    {"name": "Spelling Relay", "category": "Vocabulary", "grades": [5, 6, 7], "instructions": "Students race to spell words correctly by passing a letter from teammate to teammate."},
+    {"name": "Grammar Auction", "category": "Grammar", "grades": [8, 9, 10], "instructions": "Sentences are 'auctioned' off, and students bid on the correct ones."},
+    {"name": "Broken Telephone", "category": "Communication", "grades": [5, 6, 7], "instructions": "A whispered message travels down a line of students; the last one says it aloud."},
+    {"name": "Pictionary", "category": "Vocabulary", "grades": [5, 6, 7, 8, 9, 10], "instructions": "Students draw vocabulary words while others guess."},
+    {"name": "Story Cubes", "category": "Thinking & Puzzles", "grades": [7, 8, 9, 10], "instructions": "Students roll dice with images and create a story using all images."},
+    {"name": "Charades", "category": "Movement", "grades": [5, 6, 7, 8], "instructions": "A student acts out a word while others guess."},
+    {"name": "Odd One Out", "category": "Thinking & Puzzles", "grades": [6, 7, 8, 9, 10], "instructions": "Students find the unrelated word in a group of four words."},
+    {"name": "Hot Seat", "category": "Vocabulary", "grades": [6, 7, 8, 9], "instructions": "One student sits with their back to the board while classmates describe a word for them to guess."},
+    {"name": "Would You Rather...?", "category": "Communication", "grades": [5, 6, 7, 8, 9, 10], "instructions": "Students answer fun 'Would you rather' questions and explain their choices."},
+    {"name": "Memory Chain", "category": "Thinking & Puzzles", "grades": [5, 6, 7, 8], "instructions": "Each student repeats previous words in order and adds a new one to the list."},
+    {"name": "Secret Word", "category": "Vocabulary", "grades": [6, 7, 8, 9], "instructions": "A student describes a secret word without saying it, and others guess."},
+    {"name": "Word Ladders", "category": "Vocabulary", "grades": [7, 8, 9, 10], "instructions": "Students change one letter at a time to transform a word into another."},
+    {"name": "Sentence Building Relay", "category": "Grammar", "grades": [6, 7, 8], "instructions": "Each student adds a word to build a correct sentence in a relay race format."},
 ]
 
 # Streamlit UI
+st.set_page_config(page_title="English Warm-Up Generator", layout="centered")
 st.title("English Warm-Up Generator")
-st.sidebar.image("school_logo.png", use_column_width=True)
-st.sidebar.write("Created by Mr Übach in collaboration with ChatGPT")
+st.subheader("created by Mr Übach in collaboration with ChatGPT")
 
-selected_grade = st.sidebar.selectbox("Select Grade", list(range(5, 11)))
-selected_category = st.sidebar.selectbox("Select Category", ["Grammatik", "Vokabeln", "Kommunikation", "Bewegung", "Denken & Rätsel"])
+# Schul-Logo hinzufügen
+st.image("school_logo.png", width=200)
+
+# Auswahlfelder
+selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10])
+selected_category = st.selectbox("Select Category:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"])
+
+# Spielauswahl per Knopfdruck
+def get_random_warm_up():
+    filtered_warm_ups = [w for w in warm_ups if selected_grade in w["grades"] and (selected_category == "All" or w["category"] == selected_category)]
+    return random.choice(filtered_warm_ups) if filtered_warm_ups else None
 
 if st.button("Generate Warm-Up"):
-    filtered_warm_ups = [wu for wu in warm_ups if selected_grade in wu["grades"] and wu["category"] == selected_category]
-    if filtered_warm_ups:
-        warm_up = random.choice(filtered_warm_ups)
-        st.subheader(warm_up["name"])
-        st.write(warm_up["description"])
+    warm_up = get_random_warm_up()
+    if warm_up:
+        st.write(f"### {warm_up['name']}")
+        st.write(f"**Category:** {warm_up['category']}")
+        st.write(f"**Instructions:** {warm_up['instructions']}")
     else:
-        st.write("No matching warm-ups found. Try a different category or grade.")
+        st.write("No warm-up available for this selection.")
