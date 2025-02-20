@@ -29,7 +29,7 @@ st.set_page_config(page_title="Warm-Up Generator", layout="centered")
 st.title("Warm-Up Generator")
 
 # Schul-Logo hinzufügen
-st.image("school_logo.png", width=100, use_column_width='auto', caption='School Logo', output_format='auto')
+st.image("school_logo.png", width=100, use_container_width='auto', caption='School Logo', output_format='auto')
 
 # Auswahlfelder
 selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10])
