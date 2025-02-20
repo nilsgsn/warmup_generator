@@ -22,7 +22,13 @@ warm_ups = [
     {"name": "Secret Word", "category": "Vocabulary", "grades": [6, 7, 8, 9], "instructions": "A student describes a secret word without saying it, and others guess."},
     {"name": "Word Ladders", "category": "Vocabulary", "grades": [7, 8, 9, 10], "instructions": "Students change one letter at a time to transform a word into another."},
     {"name": "Sentence Building Relay", "category": "Grammar", "grades": [6, 7, 8], "instructions": "Each student adds a word to build a correct sentence in a relay race format."},
-
+    {"name": "Vocabulary Treasure Hunt", "category": "Vocabulary", "grades": [5, 6, 7], "instructions": "Students search the classroom for hidden vocabulary cards."},
+    {"name": "Four Corners (Opinion Game)", "category": "Communication", "grades": [7, 8, 9, 10], "instructions": "Students go to a corner of the room that corresponds to their opinion on a statement."},
+    {"name": "Act It Out (Charades)", "category": "Movement", "grades": [5, 6, 7, 8, 9, 10], "instructions": "A student acts out a word while others guess."},
+    {"name": "Human Word Scramble", "category": "Movement", "grades": [6, 7, 8], "instructions": "Students form letters with their bodies to create words."},
+    {"name": "Stand Up If…", "category": "Communication", "grades": [5, 6, 7, 8], "instructions": "Students stand up when a statement applies to them."},
+    {"name": "Ball Toss Q&A", "category": "Communication", "grades": [5, 6, 7, 8, 9, 10], "instructions": "Students toss a ball to each other and ask questions when they catch it."},
+    {"name": "Jump the Line (True or False)", "category": "Movement", "grades": [6, 7, 8, 9, 10], "instructions": "Students jump over a line if they think a statement is true or false."},
     # Neue Warm-Ups
     {"name": "Hangman", "category": "Thinking & Puzzles", "grades": [5, 6, 7], "instructions": "One student thinks of a word, and others guess letters to figure it out before the hangman is complete."},
     {"name": "Word Chains", "category": "Vocabulary", "grades": [6, 7, 8, 9, 10], "instructions": "Students create chains of words where each new word starts with the last letter of the previous word."},
