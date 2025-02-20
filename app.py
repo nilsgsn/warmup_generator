@@ -25,12 +25,11 @@ warm_ups = [
 ]
 
 # Streamlit UI
-st.set_page_config(page_title="English Warm-Up Generator", layout="centered")
-st.title("English Warm-Up Generator")
-st.subheader("created by Mr Übach in collaboration with ChatGPT")
+st.set_page_config(page_title="Warm-Up Generator", layout="centered")
+st.title("Warm-Up Generator")
 
 # Schul-Logo hinzufügen
-st.image("school_logo.png", width=200)
+st.image("school_logo.png", width=100, use_column_width='auto', caption='School Logo', output_format='auto')
 
 # Auswahlfelder
 selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10])
@@ -44,8 +43,12 @@ def get_random_warm_up():
 if st.button("Generate Warm-Up"):
     warm_up = get_random_warm_up()
     if warm_up:
-        st.write(f"### {warm_up['name']}")
-        st.write(f"**Category:** {warm_up['category']}")
-        st.write(f"**Instructions:** {warm_up['instructions']}")
+        st.markdown(f"<h3 style='text-align: center;'>{warm_up['name']}</h3>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align: center;'><strong>Category:</strong> {warm_up['category']}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align: center;'><strong>Instructions:</strong> {warm_up['instructions']}</p>", unsafe_allow_html=True)
     else:
-        st.write("No warm-up available for this selection.")
+        st.markdown("<p style='text-align: center;'>No warm-up available for this selection.</p>", unsafe_allow_html=True)
+
+# Hinweis ganz unten
+st.markdown("<br><br><br>", unsafe_allow_html=True)  # Fügt Platz ein
+st.markdown("<p style='text-align: center; font-size: smaller;'>created by Mr Übach in collaboration with ChatGPT</p>", unsafe_allow_html=True)
