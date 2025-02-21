@@ -49,7 +49,7 @@ warm_ups = [
 
 # Streamlit UI
 st.set_page_config(page_title="Warm-Up Generator", layout="centered")
-st.title("Warm-Up Generator")
+st.title("🎲 Warm-Up Generator")
 
 # Zentrierte Auswahlfelder
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
