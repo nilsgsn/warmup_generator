@@ -51,6 +51,26 @@ warm_ups = [
 st.set_page_config(page_title="Warm-Up Generator", layout="centered")
 st.title("🎲 Warm-Up Generator")
 
+# Hintergrundfarbe setzen
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background-color: rgb(240, 240, 240); /* Hellgrau als Hintergrund */
+    }
+    .stButton > button {
+        background-color: rgb(0, 171, 215); /* Blau für den Button */
+        color: white; /* Weiße Schrift für den Button */
+    }
+    h1 {
+        color: rgb(0, 171, 215); /* Titel in Blau */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Zentrierte Auswahlfelder
 st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
 selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10], index=0)
