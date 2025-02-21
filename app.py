@@ -77,7 +77,4 @@ st.markdown("<br><br><br>", unsafe_allow_html=True)  # Fügt Platz ein
 st.markdown("<p style='text-align: center; font-size: smaller;'>created by Mr Übach in collaboration with ChatGPT</p>", unsafe_allow_html=True)
 
 # Schul-Logo hinzufügen
-st.markdown(
-    "<img src='school_logo.png' style='max-width: 100px; width: auto; height: auto;'>",
-    unsafe_allow_html=True
-)
+st.image("school_logo.png", height=50)
