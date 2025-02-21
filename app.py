@@ -49,21 +49,15 @@ warm_ups = [
 
 # Streamlit UI
 st.set_page_config(page_title="Warm-Up Generator", layout="centered")
-st.title("Warm-Up Generator")
+st.title("🎲 Warm-Up Generator")
 
-# Zentrierte Auswahlfelder
-st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-selected_grade = st.selectbox("Select Grade:", [5, 6, 7, 8, 9, 10], index=0)
-selected_category = st.selectbox("Select Category:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"], index=0)
-st.markdown("</div>", unsafe_allow_html=True)
-
-# Spielauswahl per Knopfdruck
-def get_random_warm_up():
-    filtered_warm_ups = [w for w in warm_ups if selected_grade in w["grades"] and (selected_category == "All" or w["category"] == selected_category)]
-    return random.choice(filtered_warm_ups) if filtered_warm_ups else None
+# Sidebar für Auswahlfelder
+st.sidebar.header("Einstellungen")
+selected_grade = st.sidebar.selectbox("Wähle die Klassenstufe:", [5, 6, 7, 8, 9, 10])
+selected_category = st.sidebar.selectbox("Wähle die Kategorie:", ["All", "Vocabulary", "Grammar", "Communication", "Movement", "Thinking & Puzzles"])
 
 # Zentrierter Button
-if st.button("Generate Warm-Up", key="generate_button"):
+if st.button("Generate Warm-Up"):
     warm_up = get_random_warm_up()
     if warm_up:
         st.markdown(f"<h3 style='text-align: center;'>{warm_up['name']}</h3>", unsafe_allow_html=True)
@@ -73,11 +67,11 @@ if st.button("Generate Warm-Up", key="generate_button"):
         st.markdown("<p style='text-align: center;'>No warm-up available for this selection.</p>", unsafe_allow_html=True)
 
 # Hinweis ganz unten
-st.markdown("<br><br><br>", unsafe_allow_html=True)  # Fügt Platz ein
+st.markdown("<br><br><br>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: smaller;'>created by Mr Übach in collaboration with ChatGPT</p>", unsafe_allow_html=True)
 
 # Schul-Logo hinzufügen
 st.markdown(
-    "<img src='school_logo.png' style='width: 100px; height: auto;'>",
+    "<img src='school_logo.png' style='max-width: 100px; width: auto; height: auto;'>",
     unsafe_allow_html=True
 )
