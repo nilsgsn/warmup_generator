@@ -94,7 +94,7 @@ if st.button("Generate Warm-Up", key="generate_button"):
 
 # Hinweis ganz unten
 st.markdown("<hr>", unsafe_allow_html=True)  # Trennlinie für besseren Look
-st.markdown("<br><br><br>", unsafe_allow_html=True)  # Fügt Platz ein
+
 st.markdown("<p style='text-align: center; font-size: smaller;'>made by Nils Übach in collaboration with ChatGPT</p>", unsafe_allow_html=True)
 import streamlit as st
 # URL des Logos
